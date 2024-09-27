@@ -29,7 +29,7 @@ mock_s3() {
 # Simulated function for IAM
 mock_iam() {
     echo "Simulating IAM Users in $aws_region"
-    echo "User Name: john_doe"
+    echo "User Name: Jeewan Kumar Thakur"
     echo "Creation Date: 2020-10-01"
 }
 
@@ -51,7 +51,7 @@ mock_cloudwatch() {
 # Simulated function for Route53
 mock_route53() {
     echo "Simulating Route53 Hosted Zones in $aws_region"
-    echo "Hosted Zone: mydomain.com"
+    echo "Hosted Zone: jeewankumar.com"
     echo "Record Count: 5"
 }
 
@@ -71,10 +71,10 @@ case $aws_service in
         mock_lambda
         ;;
      cloudwatch)
-        echo "Simulating Cloudwatch Alarms"
+        mock_cloudwatch
         ;;
     route53)
-        echo "Simulating Hosted Zones"
+        mock_route53
         ;;
     *)
         echo "Invalid service. Please enter a valid service."
@@ -85,21 +85,15 @@ esac
 log_file="aws_resource_list.log"
 
 log() {
-    echo "$(date '+%Y-%m-%d %H:%M:%S') - $1" >> "$log_file"
+    local level="$1"
+    shift
+    echo "$(date '+%Y-%m-%d %H:%M:%S') [$level] - $*" >> "$log_file"
 }
 
-# Example usage:
-log "Listing EC2 Instances in $aws_region"
-mock_ec2
-log "Listing s3 buckets in $aws_region"
-mock_s3
-log "Listing iam users in $aws_region"
-mock_iam
-log "Listing lambda functions in $aws_region"
-mock_lambda
-log "Listing cloudwatch alarms in $aws_region"
-mock_cloudwatch
-log "Listing hosted zones in $aws_region"
-mock_route53
+display_logs() {
+    echo "Last 10 log entries:"
+    tail -n 10 "$log_file"
+}
+
 
 
