@@ -1,10 +1,12 @@
-# AWS Service SimuLister
+# AWS Resource Simulator using BASH
 
 ### Author: Jeewan Kumar Thakur
 
 ## Project Overview
 
 I made a Bash script to list AWS resources like EC2, S3, and Lambda. It uses AWS commands and can handle errors for wrong inputs. I tested the script using BATS to check that it functions correctly and can simulate AWS responses without needing actual access. I also followed good practices in coding, like checking inputs and organizing the script.
+
+I have also uploaded the code to automate with the original aws account.
 
 
 ### The script supports the following AWS services:
