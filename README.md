@@ -34,6 +34,8 @@ This project includes unit tests using **BATS** (Bash Automated Testing System) 
 1. Technologies: Bash, AWS CLI, BATS (Bash Automated Testing System)
 2. Skills: Shell Scripting, Automation, Cloud Infrastructure, Testing, Error Handling, Mock Simulations
 
+ ![preview img](/preview4.png)
+
 ## Table of Contents
 1. [Prerequisites](#prerequisites)
 2. [Project Setup](#project-setup)
