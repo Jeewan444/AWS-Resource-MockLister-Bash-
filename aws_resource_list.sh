@@ -1,5 +1,26 @@
 #!/bin/bash
 
+###############################################################################
+# Author: Jeewan Kumar Thakur
+# Version: v0.0.1
+
+# This is the Script to automate the process of listing all the resources in an AWS account
+#
+# Below are the services that are supported by this script:
+# 1. EC2
+# 2. S3
+# 3. IAM
+# 4. Route53
+# 5. CloudWatch
+# 6.lambda
+
+
+# The script will prompt the user to enter the AWS region and the service for which the resources need to be listed.
+#
+# Usage: ./aws_resource_list.sh  <aws_region> <aws_service>
+# Example: ./aws_resource_list.sh us-east-1 ec2
+#############################################################################
+
 # Check if the required number of arguments are passed
 if [ $# -ne 2 ]; then
     echo "Usage: ./aws_resource_list.sh <aws_region> <aws_service>"
