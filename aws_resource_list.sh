@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Check if the required number of arguments are passed
-if [ $# -ne 2 ]; then
+if [ !$# -ne 2 ]; then
     echo "Usage: ./aws_resource_list.sh <aws_region> <aws_service>"
     echo "Example: ./aws_resource_list.sh us-east-1 ec2"
     exit 1
@@ -91,5 +91,15 @@ log() {
 # Example usage:
 log "Listing EC2 Instances in $aws_region"
 mock_ec2
+log "Listing s3 buckets in $aws_region"
+mock_s3
+log "Listing iam users in $aws_region"
+mock_iam
+log "Listing lambda functions in $aws_region"
+mock_lambda
+log "Listing cloudwatch alarms in $aws_region"
+mock_cloudwatch
+log "Listing hosted zones in $aws_region"
+mock_route53
 
 
