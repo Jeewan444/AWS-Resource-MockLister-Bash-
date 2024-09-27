@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Check if the required number of arguments are passed
-if [ !$# -ne 2 ]; then
+if [ $# -ne 2 ]; then
     echo "Usage: ./aws_resource_list.sh <aws_region> <aws_service>"
     echo "Example: ./aws_resource_list.sh us-east-1 ec2"
     exit 1
@@ -70,11 +70,11 @@ case $aws_service in
     lambda)
         mock_lambda
         ;;
-    cloudwatch)
-        mock_cloudwatch
+     cloudwatch)
+        echo "Simulating Cloudwatch Alarms"
         ;;
     route53)
-        mock_route53
+        echo "Simulating Hosted Zones"
         ;;
     *)
         echo "Invalid service. Please enter a valid service."

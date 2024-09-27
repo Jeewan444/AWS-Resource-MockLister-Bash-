@@ -15,7 +15,7 @@
     [[ "$result" == *"Simulating IAM Users"* ]]
 }
 
-@test "Lamda Function mock response" {
+@test "Lambda Function mock response" {
     result="$(./aws_resource_list.sh us-east-1 lambda)"
     [[ "$result" == *"Simulating Lambda Function"* ]]
 }
